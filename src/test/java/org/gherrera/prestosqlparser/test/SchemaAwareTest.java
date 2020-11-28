@@ -13,7 +13,14 @@ public class SchemaAwareTest {
 	    public void testAppendSchemaA() {
 	        String sql = "select * from tableA";
 	        String bound = adapter.rewriteSql(sql, schemaId);
-	        assertEquals(bound,
+	        assertEqualsFormattingStripped(bound,
 	                     "select * from \"SCHEMA\".tableA");
+	    }
+	    
+	    private void assertEqualsFormattingStripped(String sql1, String sql2) {
+	        
+	        assertEquals(sql1.replace("\n", " ").toLowerCase().replace("\r", " ").replaceAll(" +", " ").trim(),
+	                     sql2.replace("\n", " ").toLowerCase().replace("\r", " ").replaceAll(" +", " ").trim());
+	        
 	    }
 }
