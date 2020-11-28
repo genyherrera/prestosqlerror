@@ -11,7 +11,7 @@
 		<dependency>
 			<groupId>com.facebook.presto</groupId>
 			<artifactId>presto-parser</artifactId>
-			<version>0.229</version>
+			<version>0.244</version>
 		</dependency>
 		<dependency>
 			<groupId>org.testng</groupId>
